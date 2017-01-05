@@ -32,32 +32,6 @@ const countryOptions = [
 ]
 
 class FormView extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      selected: null,
-      toggle: false,
-      on: false,
-      height: 0
-    }
-
-    this.onToggleChange = this.onToggleChange.bind(this)
-    this.onValueChange = this.onValueChange.bind(this)
-  }
-
-  onValueChange(newValue) {
-    this.setState({
-      selected: newValue
-    })
-  }
-
-  onToggleChange(newValue) {
-    this.setState({
-      toggle: newValue
-    })
-  }
-
   render() {
     const { handleSubmit, submitting } = this.props
 
@@ -68,19 +42,19 @@ class FormView extends Component {
             <Input name="first_name" label="First name" placeholder="John" />
             <Input name="last_name" label="Last name" placeholder="Doe" />
             <Input name="email" label="Email" placeholder="something@domain.com" />
-            <Input name="telephone" inlineLabel={false} label="Phone" placeholder="(074) 275-34-45" />
+            <Input name="telephone" label="Phone" placeholder="+45 88 88 88 88" />
           </Fieldset>
           <Fieldset label="Shipping details" last>
             <Input name="address" label="Address" placeholder="Hejrevej 33" />
+            <Input name="city" label="City" placeholder="Copenhagen" />
             <Input name="zip" label="ZIP Code" placeholder="2400" />
             <Select
               name="country"
               label="Country"
               options={countryOptions}
               placeholder="Denmark"
-              onValueChange={newValue => this.setState({ selected: newValue })} value={this.state.selected}
             />
-            <Switch border={false} name="save_details" onValueChange={this.onToggleChange} value={this.state.toggle} />
+            <Switch label="Save my details" border={false} name="save_details" />
           </Fieldset>
         </FieldsContainer>
         <ActionsContainer>
