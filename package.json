@@ -1,0 +1,39 @@
+{
+  "name": "react-native-clean-form",
+  "version": "0.1.0",
+  "description": "An example of creating mobile forms with React Native, styled-components and redux-form",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/esbenp/react-native-clean-form.git"
+  },
+  "keywords": [
+    "react-native",
+    "redux-form",
+    "immutable.js",
+    "styled-components"
+  ],
+  "author": "Esben Petersen <esbenspetersen@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/esbenp/react-native-clean-form/issues"
+  },
+  "homepage": "https://github.com/esbenp/react-native-clean-form#readme",
+  "dependencies": {
+    "react-native": "^0.40.0",
+    "react-native-vector-icons": "^3.0.0",
+    "styled-components": "^1.2.1"
+  },
+  "devDependencies": {
+  },
+  "files": [
+    "src",
+    "redux-form.js",
+    "redux-form-immutable.js"
+  ]
+}
