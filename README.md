@@ -13,7 +13,7 @@ Easy react-native forms using bootstrap-like syntax with redux-form+immutablejs 
 <img align="right" src="docs/normal.jpg" width="275">
 
 * Form elements with syntax inspired by Bootstrap
-* Styled using [styled-components](https://github.com/styled-components/styled-components). Easy extendible.
+* Styled using [styled-components](https://github.com/styled-components/styled-components). Easily extendible.
 * Integrated with [redux-form](https://github.com/erikras/redux-form)
 * Supports [immutable.js](https://github.com/facebook/immutable-js) state
 
