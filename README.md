@@ -30,6 +30,8 @@ The form uses `react-native-vector-icons` so it is important the fonts are linke
 
 ## Example
 
+[I have written an article on my blog about React Native and redux-form](http://esbenp.github.io/2017/01/06/react-native-redux-form-immutable-styled-components/)
+
 **[For a complete example check out the example folder](https://github.com/esbenp/react-native-clean-form/tree/master/example)**
 
 ## Usage
