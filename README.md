@@ -44,7 +44,7 @@ import {
   Fieldset,
   Form,
   FormGroup,
-  Input
+  Input,
   Label,
   Switch
 } from 'react-native-clean-form'
