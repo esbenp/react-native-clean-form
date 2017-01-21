@@ -146,6 +146,7 @@ Select.PropTypes = {
 }
 
 Select.defaultProps = {
+  onValueChange: () => {},
   placeholder: '',
   labelKey: 'label',
   valueKey: 'value',
