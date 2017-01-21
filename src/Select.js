@@ -86,7 +86,7 @@ class Select extends Component {
       showSelector: false,
       value: newValue
     }, () => {
-      this.props.onValueChange && this.props.onValueChange(newValue)
+      this.props.onValueChange(newValue)
     })
   }
 
@@ -146,6 +146,7 @@ Select.PropTypes = {
 }
 
 Select.defaultProps = {
+  onValueChange: () => {},
   placeholder: '',
   labelKey: 'label',
   valueKey: 'value',
