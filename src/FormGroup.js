@@ -1,7 +1,29 @@
 import React from 'react'
-import { View } from 'react-native'
+import { View, TextInput } from 'react-native'
 import styled from 'styled-components/native'
+import _ from 'lodash'
 import defaultTheme from './theme'
+
+/**
+ * Calculate the height based on the given field properties.
+ * The inline label and multiline properties affect the height.
+ * 
+ * @param {Object} props
+ * @returns {int}
+ */
+const calculateHeight = (props) => {
+  let height = props.theme.FormGroup.height
+
+  if (props.multiline) {
+    height = props.theme.FormGroup.height * props.numberOfLines
+  }
+
+  if (!props.inlineLabel) {
+    height += props.theme.Label.stackedHeight
+  }
+
+  return (height)
+}
 
 const FormGroupWrapper = styled.View`
   align-items: ${props => props.inlineLabel ? 'center' : 'stretch' };
@@ -11,7 +33,7 @@ const FormGroupWrapper = styled.View`
   border-width: ${props => props.border ? props.theme.FormGroup.borderWidth : 0};
   flex-direction: ${props => props.inlineLabel ? 'row' : 'column' };
   justify-content: flex-start;
-  height: ${props => props.inlineLabel ? props.theme.FormGroup.height : props.theme.FormGroup.height + props.theme.Label.stackedHeight};
+  height: ${props => calculateHeight(props)};
   marginBottom: ${props => props.theme.FormGroup.marginBottom};
   padding: ${props => props.theme.FormGroup.padding};
 `
@@ -21,15 +43,21 @@ FormGroupWrapper.defaultProps = {
 }
 
 const FormGroup = props => {
-  const { border, error, inlineLabel } = props
+  const { border, error, inlineLabel, multiline, numberOfLines, keyboardType, returnKeyType } = props
   const children = React.Children.map(props.children, child => {
+    let subsetOfProps = {}
+    if (child.type.name === 'Input') {
+      const inputPropTypes = Object.keys(child.type.PropTypes)
+      subsetOfProps = _.pick(props, inputPropTypes);
+    }
+
     return React.cloneElement(child, Object.assign({}, child.props, {
-      inlineLabel
+      inlineLabel, ...subsetOfProps
     }))
   })
 
   return (
-    <FormGroupWrapper border={border} error={error} inlineLabel={inlineLabel}>
+    <FormGroupWrapper border={border} error={error} inlineLabel={inlineLabel} multiline={multiline} numberOfLines={numberOfLines}>
       { children }
     </FormGroupWrapper>
   )
@@ -38,13 +66,14 @@ const FormGroup = props => {
 FormGroup.PropTypes = {
   border: React.PropTypes.bool,
   error: React.PropTypes.bool,
-  inlineLabel: React.PropTypes.bool
 }
 
 FormGroup.defaultProps = {
   border: true,
   error: false,
-  inlineLabel: true
+  inlineLabel: true,
+  numberOfLines: 1,
+  multiline: false
 }
 
 export default FormGroup
