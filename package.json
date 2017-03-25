@@ -6,8 +6,7 @@
   "directories": {
     "example": "example"
   },
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/esbenp/react-native-clean-form.git"
@@ -37,6 +36,6 @@
     "react-native": "*"
   },
   "dependencies": {
-    "styled-components": "^1.2.1"
+    "styled-components": "^1.4"
   }
 }
