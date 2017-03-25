@@ -4,7 +4,6 @@ import styled from 'styled-components/native'
 import defaultTheme from './theme'
 
 const LabelWrapper = styled.View`
-  flex:.5;
   marginTop: ${props => props.inlineLabel ? 0 : 5};
 `
 
