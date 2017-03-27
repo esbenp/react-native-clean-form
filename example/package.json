@@ -22,16 +22,16 @@
     "react-native-vector-icons": ">=4.0.0"
   },
   "dependencies": {
-    "react": ">=15.4.0",
-    "react-native": ">=0.40",
     "immutable": "^3.8.1",
-    "styled-components": "^1.4",
+    "react": ">=15.4.0",
+    "react-native": "^0.42.3",
+    "react-native-clean-form": "file:../",
+    "react-native-vector-icons": ">=4.0.0",
     "react-redux": "^5.0.1",
     "redux": "^3.6.0",
     "redux-form": "^6.4.3",
     "redux-immutablejs": "0.0.8",
-    "react-native-vector-icons": ">=4.0.0",
-    "react-native-clean-form": "file:../"
+    "styled-components": "^1.4"
   },
   "jest": {
     "preset": "react-native"
