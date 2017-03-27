@@ -37,7 +37,7 @@ const theme = {
   Label: {
     color: '#bfc2c9',
     fontSize: 12,
-    stackedHeight: 20
+    stackedHeight: 40
   },
   Select: {
 

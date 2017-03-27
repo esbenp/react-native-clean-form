@@ -6,7 +6,8 @@ import defaultTheme from './theme'
 // When doing stacked labels we want the input to be greedy
 const InputWrapper = styled.View`
   flex: ${props => props.inlineLabel ? .5 : 1};
-  height: ${props => props.inlineLabel ? props.theme.FormGroup.height - props.theme.FormGroup.borderWidth*2 : props.theme.FormGroup.height};
+  justify-content: center;
+  height: ${props => props.theme.FormGroup.height};
 `
 
 InputWrapper.defaultProps = {
@@ -15,10 +16,11 @@ InputWrapper.defaultProps = {
 
 // Subtract the border of the form group to have a full height input
 const StyledInput = styled.TextInput`
+  flex: ${props => props.inlineLabel ? .5 : 1};
   color: ${props => props.theme.Input.color};
   font-size: ${props => props.theme.BaseInput.fontSize};
-  height: ${props => props.inlineLabel ? props.theme.FormGroup.height - props.theme.FormGroup.borderWidth*2 : props.theme.FormGroup.height};
-  line-height: ${props => props.inlineLabel ? props.theme.FormGroup.height - props.theme.FormGroup.borderWidth*2 : props.theme.FormGroup.height};
+  height: ${props => props.theme.FormGroup.height};
+  line-height: ${props => props.theme.FormGroup.height};
 `
 
 StyledInput.defaultProps = {
