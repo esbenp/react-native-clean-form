@@ -37,6 +37,6 @@
     "react-native": "*"
   },
   "dependencies": {
-    "styled-components": "^1.2.1"
+    "styled-components": "^1.4"
   }
 }
