@@ -36,6 +36,8 @@ const ButtonTextWrapper = styled.View`
 
 const ButtonText = styled.Text`
   color: ${props => props.theme.Button.color};
+  font-size: ${props => props.theme.Button.fontSize};
+  font-weight: ${props => props.theme.Button.fontWeight};
 `
 
 ButtonText.defaultProps = {
