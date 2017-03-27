@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { Text, View, Platform } from 'react-native'
 import styled from 'styled-components/native'
 import defaultTheme from './theme'
 
@@ -8,6 +8,7 @@ const LabelWrapper = styled.View`
   flex-direction: ${props => props.inlineLabel ? 'row' : 'column'};
   flex-direction: column;
   justify-content: center;
+  padding-left: ${Platform.OS === 'android' ? 5 : 0};
   marginTop: ${props => props.inlineLabel ? 0 : 5};
 `
 
