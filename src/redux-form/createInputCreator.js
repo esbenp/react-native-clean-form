@@ -20,7 +20,7 @@ const render = renderComponent => props => {
 
   return (
     <View>
-      <FormGroup border={border} inlineLabel={inlineLabel} error={touched && !!error}>
+      <FormGroup border={border} inlineLabel={inlineLabel} error={touched && !!error} {...props} >
         <Label>{ label }</Label>
         { renderComponent(props) }
       </FormGroup>

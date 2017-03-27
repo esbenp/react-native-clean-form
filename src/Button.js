@@ -13,6 +13,9 @@ import defaultTheme from './theme'
 
 const ButtonWrapper = styled.View`
   flex:1;
+  align-self: stretch;
+  flex-direction: column;
+  justify-content: center;
 `
 
 const ButtonStyle = styled.View`
@@ -26,17 +29,15 @@ ButtonStyle.defaultProps = {
 
 const ButtonTextWrapper = styled.View`
   flex:1;
-  flex-direction:row;
-  align-items:center;
-  justify-content:center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 `
 
 const ButtonText = styled.Text`
   color: ${props => props.theme.Button.color};
   font-size: ${props => props.theme.Button.fontSize};
   font-weight: ${props => props.theme.Button.fontWeight};
-  height: ${props => props.theme.Button.height};
-  line-height: ${props => props.theme.Button.height};
 `
 
 ButtonText.defaultProps = {
@@ -81,17 +82,9 @@ const Button = props => {
       <Touchable {...rest}>
         <ButtonStyle>
           <ButtonTextWrapper>
-            {
-              iconPlacement === 'left' &&
-                IconWrapped
-            }
-            <ButtonText>
-              { children }
-            </ButtonText>
-            {
-              iconPlacement === 'right' &&
-                IconWrapped
-            }
+            {iconPlacement === 'left' && IconWrapped}
+            <ButtonText>{ children }</ButtonText>
+            {iconPlacement === 'right' && IconWrapped}
           </ButtonTextWrapper>
         </ButtonStyle>
       </Touchable>
