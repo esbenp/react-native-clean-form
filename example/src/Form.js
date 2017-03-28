@@ -41,8 +41,9 @@ class FormView extends Component {
           <Fieldset label="Contact details">
             <Input name="first_name" label="First name" placeholder="John" />
             <Input name="last_name" label="Last name" placeholder="Doe" />
-            <Input name="email" label="Email" placeholder="something@domain.com" />
-            <Input name="telephone" label="Phone" placeholder="+45 88 88 88 88" />
+            <Input name="email" label="Email" placeholder="something@domain.com" keyboardType="email-address" returnKeyType="next" blurOnSubmit={false} />
+            <Input name="telephone" label="Phone" placeholder="+45 88 88 88 88" dataDetectorTypes="phoneNumber" keyboardType="phone-pad" />
+            <Input name="message" label="Message" placeholder="" multiline={true} numberOfLines={5}  inlineLabel={false} />
           </Fieldset>
           <Fieldset label="Shipping details" last>
             <Input name="address" label="Address" placeholder="Hejrevej 33" />
