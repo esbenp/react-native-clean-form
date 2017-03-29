@@ -8,6 +8,7 @@ import Input from './src/Input'
 import Label from './src/Label'
 import Select from './src/Select'
 import Switch from './src/Switch'
+import Theme from './src/Theme'
 
 export {
   ActionsContainer,
@@ -19,5 +20,6 @@ export {
   Input,
   Label,
   Select,
-  Switch
+  Switch,
+  Theme
 }
