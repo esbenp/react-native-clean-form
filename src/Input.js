@@ -6,7 +6,7 @@ import defaultTheme from './theme'
 /**
  * Calculate the height based on the given field properties.
  * The inline label and multiline properties affect the height.
- * 
+ *
  * @param {Object} props
  * @returns {int}
  */
@@ -24,11 +24,49 @@ const calculateHeight = (props) => {
   return (height)
 }
 
+/**
+ * Calculates the flex value based on the inlineLabel and numberOfLines
+ * properties.
+ *
+ * @param {Object} props
+ * @returns {string}
+ */
+const calculateFlexValue = (props) => {
+  let flex = 1
+
+  if (props.multiline && props.numberOfLines > 0) {
+    flex = props.numberOfLines + 1
+  }
+
+  if (props.inlineLabel) {
+    flex = 0.5
+  }
+
+  return (flex)
+}
+
+/**
+ * Decide how the text should be aligned for the input. This decision is based upon
+ * the field properties. A multiline input should start top and not centered.
+ *
+ * @param {Object} props
+ * @returns {string}
+ */
+const determineTextOrientation = (props) => {
+  let orientation = 'center'
+
+  if (props.multiline && props.numberOfLines > 1) {
+    orientation = 'top'
+  }
+
+  return (orientation)
+}
+
 // When doing stacked labels we want the input to be greedy
 const InputWrapper = styled.View`
-  flex: ${props => props.inlineLabel ? .5 : 1};
+  flex: ${props => calculateFlexValue(props)};
   justify-content: center;
-  height: ${props => props.theme.FormGroup.height};
+  height: ${props => calculateHeight(props)};
 `
 
 InputWrapper.defaultProps = {
@@ -41,7 +79,8 @@ const StyledInput = styled.TextInput`
   color: ${props => props.theme.Input.color};
   font-size: ${props => props.theme.BaseInput.fontSize};
   height: ${props => calculateHeight(props)};
-  line-height: ${props => props.theme.FormGroup.height};
+  line-height: ${props => props.theme.BaseInput.lineHeight};
+  text-align-vertical: ${props => determineTextOrientation(props)};
 `
 
 StyledInput.defaultProps = {
@@ -51,7 +90,10 @@ StyledInput.defaultProps = {
 class Input extends React.Component {
   render() {
     return (
-      <InputWrapper inlineLabel={this.props.inlineLabel}>
+      <InputWrapper
+        inlineLabel={this.props.inlineLabel}
+        multiline={this.props.multiline}
+        numberOfLines={this.props.numberOfLines}>
         <StyledInput
           inlineLabel={this.props.inlineLabel}
           placeholderTextColor={this.props.theme.BaseInput.placeholderColor}
