@@ -19,11 +19,11 @@ LabelText.defaultProps = {
 }
 
 const Label = props => {
-  const { children, inlineLabel } = props
+  const { children, inlineLabel, theme } = props
 
   return (
-    <LabelWrapper inlineLabel={inlineLabel}>
-      <LabelText inlineLabel={inlineLabel}>{ children }</LabelText>
+    <LabelWrapper inlineLabel={inlineLabel} theme={theme}>
+      <LabelText inlineLabel={inlineLabel} theme={theme} >{ children }</LabelText>
     </LabelWrapper>
   )
 }

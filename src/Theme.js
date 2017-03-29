@@ -7,7 +7,10 @@ const Theme = {
     height: 45
   },
   ErrorMessage: {
-    color: 'red'
+    color: 'red',
+    fontSize: 10,
+    marginBottom: 15,
+    textAlign: 'right'
   },
   Fieldset: {
     borderBottomColor: '#ddd',

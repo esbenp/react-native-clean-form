@@ -79,13 +79,13 @@ const Button = props => {
   return (
     <ButtonWrapper>
       <Touchable {...rest}>
-        <ButtonStyle>
+        <ButtonStyle theme={theme}>
           <ButtonTextWrapper>
             {
               iconPlacement === 'left' &&
                 IconWrapped
             }
-            <ButtonText>
+            <ButtonText theme={theme}>
               { children }
             </ButtonText>
             {
