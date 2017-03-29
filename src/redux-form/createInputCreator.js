@@ -2,7 +2,7 @@ import React from 'react'
 import { View } from 'react-native'
 import { FormGroup, Label } from '../../index'
 import styled from 'styled-components/native'
-import defaultTheme from '../theme'
+import defaultTheme from '../Theme
 
 const ErrorMessage = styled.Text`
   color: ${props => props.theme.ErrorMessage.color};

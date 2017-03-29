@@ -2,7 +2,7 @@ import React from 'react'
 import { View, TextInput } from 'react-native'
 import styled from 'styled-components/native'
 import _ from 'lodash'
-import defaultTheme from './theme'
+import defaultTheme from './Theme'
 
 /**
  * Calculate the height based on the given field properties.

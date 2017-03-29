@@ -1,4 +1,4 @@
-const theme = {
+const Theme = {
   Button: {
     backgroundColor: '#4286dd',
     color: '#fff',
@@ -44,4 +44,4 @@ const theme = {
   }
 }
 
-export default theme
+export default Theme

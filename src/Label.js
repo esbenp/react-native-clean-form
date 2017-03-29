@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text, View } from 'react-native'
 import styled from 'styled-components/native'
-import defaultTheme from './theme'
+import defaultTheme from './Theme'
 
 const LabelWrapper = styled.View`
   marginTop: ${props => props.inlineLabel ? 0 : 5};
