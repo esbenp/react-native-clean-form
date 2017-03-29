@@ -13,6 +13,7 @@ const Theme = {
     textAlign: 'right'
   },
   Fieldset: {
+    borderBottomWidth: 1,
     borderBottomColor: '#ddd',
     labelColor: '#909090',
     labelSize: 9,
