@@ -81,17 +81,11 @@ const Button = props => {
       <Touchable {...rest}>
         <ButtonStyle theme={theme}>
           <ButtonTextWrapper>
-            {
-              iconPlacement === 'left' &&
-                IconWrapped
-            }
+            {iconPlacement === 'left' && IconWrapped}
             <ButtonText theme={theme}>
               { children }
             </ButtonText>
-            {
-              iconPlacement === 'right' &&
-                IconWrapped
-            }
+            {iconPlacement === 'right' && IconWrapped}
           </ButtonTextWrapper>
         </ButtonStyle>
       </Touchable>
