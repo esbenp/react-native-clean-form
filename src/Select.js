@@ -15,8 +15,6 @@ const HaveNoIdeaWhyThisIsNeeded=3
 
 const SelectLabel = styled.Text`
   font-size: ${props => props.theme.BaseInput.fontSize};
-  height: ${props => props.inlineLabel ? props.theme.FormGroup.height - props.theme.FormGroup.borderWidth*2 : props.theme.FormGroup.height-HaveNoIdeaWhyThisIsNeeded};
-  line-height: ${props => props.inlineLabel ? props.theme.FormGroup.height - props.theme.FormGroup.borderWidth*2 : props.theme.FormGroup.height-HaveNoIdeaWhyThisIsNeeded};
   flex:1;
 `
 
@@ -25,7 +23,8 @@ SelectLabel.defaultProps = {
 }
 
 const LabelIconWrapper = styled.View`
-  align-items:center;
+  justify-content: center;
+  align-items: center;
   flex-direction:row;
   height: ${props => props.inlineLabel ? props.theme.FormGroup.height - props.theme.FormGroup.borderWidth*2 : props.theme.FormGroup.height-HaveNoIdeaWhyThisIsNeeded};
 `

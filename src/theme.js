@@ -29,7 +29,8 @@ const theme = {
   },
   BaseInput: {
     placeholderColor: '#c9c9c9',
-    fontSize: 12
+    fontSize: 12,
+    lineHeight: 18
   },
   Input: {
     color: '#313131',
@@ -37,7 +38,7 @@ const theme = {
   Label: {
     color: '#bfc2c9',
     fontSize: 12,
-    stackedHeight: 20
+    stackedHeight: 40
   },
   Select: {
 
