@@ -9,7 +9,7 @@ import {
 } from 'react-native'
 import styled from 'styled-components/native'
 import Icon from 'react-native-vector-icons/Ionicons'
-import defaultTheme from './theme'
+import defaultTheme from './Theme'
 
 const ButtonWrapper = styled.View`
   flex:1;
@@ -80,10 +80,12 @@ const Button = props => {
   return (
     <ButtonWrapper>
       <Touchable {...rest}>
-        <ButtonStyle>
+        <ButtonStyle theme={theme}>
           <ButtonTextWrapper>
             {iconPlacement === 'left' && IconWrapped}
-            <ButtonText>{ children }</ButtonText>
+            <ButtonText theme={theme}>
+              { children }
+            </ButtonText>
             {iconPlacement === 'right' && IconWrapped}
           </ButtonTextWrapper>
         </ButtonStyle>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { View } from 'react-native'
 import styled from 'styled-components/native'
-import defaultTheme from './theme'
+import defaultTheme from './Theme'
 
 const ButtonGroup = styled.View`
   height: ${props => props.theme.Button.height};

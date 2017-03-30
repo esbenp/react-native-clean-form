@@ -1,4 +1,4 @@
-const theme = {
+const Theme = {
   Button: {
     backgroundColor: '#4286dd',
     color: '#fff',
@@ -7,9 +7,13 @@ const theme = {
     height: 45
   },
   ErrorMessage: {
-    color: 'red'
+    color: 'red',
+    fontSize: 10,
+    marginBottom: 15,
+    textAlign: 'right'
   },
   Fieldset: {
+    borderBottomWidth: 1,
     borderBottomColor: '#ddd',
     labelColor: '#909090',
     labelSize: 9,
@@ -45,4 +49,4 @@ const theme = {
   }
 }
 
-export default theme
+export default Theme

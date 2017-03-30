@@ -1,7 +1,7 @@
 import React from 'react'
 import { Switch as BaseSwitch, View } from 'react-native'
 import styled from 'styled-components'
-import defaultTheme from './theme'
+import defaultTheme from './Theme'
 
 const Switch = styled(BaseSwitch)`
 `

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text, View } from 'react-native'
 import styled from 'styled-components/native'
-import defaultTheme from './theme'
+import defaultTheme from './Theme'
 
 const FieldsetLabelText = styled.Text`
   color: ${props => props.theme.Fieldset.labelColor };
@@ -18,7 +18,7 @@ const FieldsetLabel = props => <View><FieldsetLabelText>{ props.children }</Fiel
 
 const FieldsetWrapper = styled.View`
   borderBottomColor: ${props => props.theme.Fieldset.borderBottomColor };
-  borderBottomWidth: ${props => props.last ? 0 : 1 };
+  borderBottomWidth: ${props => props.last ? 0 : props.theme.Fieldset.borderBottomWidth };
   padding: ${props => props.theme.Fieldset.padding };
 `
 
@@ -31,10 +31,10 @@ const FieldsetFormWrapper = styled.View`
 `
 
 const Fieldset = props => {
-  const { children, label, last } = props
+  const { children, label, last, theme } = props
 
   return (
-    <FieldsetWrapper last={last}>
+    <FieldsetWrapper last={last} theme={theme}>
       { /* text-transform is for some reason not supported in react native https://github.com/facebook/react-native/issues/2088 */ }
       { label && <FieldsetLabel>{ label.toUpperCase() }</FieldsetLabel> }
       <FieldsetFormWrapper>

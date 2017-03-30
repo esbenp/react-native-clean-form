@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text, View, Platform } from 'react-native'
 import styled from 'styled-components/native'
-import defaultTheme from './theme'
+import defaultTheme from './Theme'
 
 const LabelWrapper = styled.View`
   flex: ${props => props.inlineLabel ? 0.5 : 1};
@@ -22,11 +22,11 @@ LabelText.defaultProps = {
 }
 
 const Label = props => {
-  const { children, inlineLabel } = props
+  const { children, inlineLabel, theme } = props
 
   return (
-    <LabelWrapper inlineLabel={inlineLabel}>
-      <LabelText inlineLabel={inlineLabel}>{ children }</LabelText>
+    <LabelWrapper inlineLabel={inlineLabel} theme={theme}>
+      <LabelText inlineLabel={inlineLabel} theme={theme} >{ children }</LabelText>
     </LabelWrapper>
   )
 }

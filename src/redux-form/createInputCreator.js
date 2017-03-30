@@ -2,13 +2,13 @@ import React from 'react'
 import { View } from 'react-native'
 import { FormGroup, Label } from '../../index'
 import styled from 'styled-components/native'
-import defaultTheme from '../theme'
+import defaultTheme from '../Theme
 
 const ErrorMessage = styled.Text`
   color: ${props => props.theme.ErrorMessage.color};
-  fontSize:10;
-  marginBottom:15;
-  textAlign:right;
+  fontSize: ${props => props.theme.ErrorMessage.fontSize};
+  marginBottom: ${props => props.theme.ErrorMessage.marginBottom};
+  textAlign: ${props => props.theme.ErrorMessage.textAlign};
 `
 
 ErrorMessage.defaultProps = {
@@ -16,7 +16,7 @@ ErrorMessage.defaultProps = {
 }
 
 const render = renderComponent => props => {
-  const { border, input : { onChange, ...restInput }, label, inlineLabel, meta: { touched, error } } = props
+  const { border, input : { onChange, ...restInput }, label, inlineLabel, theme, meta: { touched, error } } = props
 
   return (
     <View>
@@ -24,7 +24,7 @@ const render = renderComponent => props => {
         <Label>{ label }</Label>
         { renderComponent(props) }
       </FormGroup>
-      { touched && error && <ErrorMessage>{ error }</ErrorMessage> }
+      { touched && error && <ErrorMessage theme={theme}>{ error }</ErrorMessage> }
     </View>
   )
 }

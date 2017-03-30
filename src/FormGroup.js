@@ -2,12 +2,12 @@ import React from 'react'
 import { View, TextInput } from 'react-native'
 import styled from 'styled-components/native'
 import _ from 'lodash'
-import defaultTheme from './theme'
+import defaultTheme from './Theme'
 
 /**
  * Calculate the height based on the given field properties.
  * The inline label and multiline properties affect the height.
- * 
+ *
  * @param {Object} props
  * @returns {int}
  */
@@ -43,7 +43,7 @@ FormGroupWrapper.defaultProps = {
 }
 
 const FormGroup = props => {
-  const { border, error, inlineLabel, multiline, numberOfLines, keyboardType, returnKeyType } = props
+  const { border, error, inlineLabel, theme, multiline, numberOfLines, keyboardType, returnKeyType } = props
   const children = React.Children.map(props.children, child => {
     let subsetOfProps = {}
     if (child.type.name === 'Input') {
@@ -52,7 +52,7 @@ const FormGroup = props => {
     }
 
     return React.cloneElement(child, Object.assign({}, child.props, {
-      inlineLabel, ...subsetOfProps
+      inlineLabel, theme, ...subsetOfProps
     }))
   })
 
