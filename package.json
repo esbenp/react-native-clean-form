@@ -19,7 +19,7 @@
     "styled-components"
   ],
   "author": "Esben Petersen <esbenspetersen@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/esbenp/react-native-clean-form/issues"
   },
