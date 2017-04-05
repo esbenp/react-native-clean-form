@@ -145,7 +145,7 @@ Select.PropTypes = {
 }
 
 Select.defaultProps = {
-  componentName: 'Label',
+  componentName: 'Select',
   onValueChange: () => {},
   placeholder: '',
   labelKey: 'label',
