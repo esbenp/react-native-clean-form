@@ -39,14 +39,15 @@ const FormGroupWrapper = styled.View`
 `
 
 FormGroupWrapper.defaultProps = {
-  theme: defaultTheme
+  theme: defaultTheme,
+  componentName: 'FormGroupWrapper'
 }
 
 const FormGroup = props => {
   const { border, error, inlineLabel, theme, multiline, numberOfLines, keyboardType, returnKeyType } = props
   const children = React.Children.map(props.children, child => {
     let subsetOfProps = {}
-    if (child.type.name === 'Input') {
+    if (child.props.componentName === 'Input') {
       const inputPropTypes = Object.keys(child.type.PropTypes)
       subsetOfProps = _.pick(props, inputPropTypes);
     }
@@ -69,6 +70,7 @@ FormGroup.PropTypes = {
 }
 
 FormGroup.defaultProps = {
+  componentName: 'FormGroup',
   border: true,
   error: false,
   inlineLabel: true,

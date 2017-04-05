@@ -18,7 +18,8 @@ const LabelText = styled.Text`
 `
 
 LabelText.defaultProps = {
-  theme: defaultTheme
+  theme: defaultTheme,
+  componentName: 'Label',
 }
 
 const Label = props => {

@@ -8,7 +8,8 @@ const ButtonGroup = styled.View`
 `
 
 ButtonGroup.defaultProps = {
-  theme: defaultTheme
+  theme: defaultTheme,
+  componentName: 'ButtonGroup'
 }
 
 export default ButtonGroup

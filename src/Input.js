@@ -109,6 +109,7 @@ Input.PropTypes = {
 }
 
 Input.defaultProps = {
+  componentName: 'Input',
   inlineLabel: true,
   theme: defaultTheme
 }
