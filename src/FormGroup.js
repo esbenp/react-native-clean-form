@@ -58,7 +58,8 @@ const FormGroup = props => {
   })
 
   return (
-    <FormGroupWrapper border={border} error={error} inlineLabel={inlineLabel} multiline={multiline} numberOfLines={numberOfLines}>
+    <FormGroupWrapper border={border} error={error} inlineLabel={inlineLabel}
+      multiline={multiline} numberOfLines={numberOfLines} theme={theme}>
       { children }
     </FormGroupWrapper>
   )

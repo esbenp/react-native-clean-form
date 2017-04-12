@@ -90,7 +90,16 @@ class Select extends Component {
   }
 
   render() {
-    const { inlineLabel, labelKey, options, onValueChange, placeholder, valueKey, ...rest } = this.props
+    const {
+      inlineLabel,
+      labelKey,
+      options,
+      onValueChange,
+      placeholder,
+      valueKey,
+      theme,
+      ...rest
+    } = this.props
     const { showSelector, value } = this.state
 
     const labelsByValue = options.reduce((carry, option) => {
@@ -104,7 +113,7 @@ class Select extends Component {
     }
 
     return (
-      <SelectWrapper inlineLabel={inlineLabel}>
+      <SelectWrapper inlineLabel={inlineLabel} theme={theme}>
         <Modal
           onRequestClose={this.toggleSelector}
           visible={showSelector}
