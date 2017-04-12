@@ -4,27 +4,6 @@ import styled from 'styled-components/native'
 import defaultTheme from './Theme'
 
 /**
- * Calculate the height based on the given field properties.
- * The inline label and multiline properties affect the height.
- *
- * @param {Object} props
- * @returns {int}
- */
-const calculateHeight = (props) => {
-  let height = props.theme.FormGroup.height
-
-  if (props.multiline) {
-    height = props.theme.FormGroup.height * (props.numberOfLines - 1)
-  }
-
-  if (props.inlineLabel) {
-    height -= props.theme.FormGroup.borderWidth * 2
-  }
-
-  return (height)
-}
-
-/**
  * Calculates the flex value based on the inlineLabel and numberOfLines
  * properties.
  *
@@ -66,7 +45,6 @@ const determineTextOrientation = (props) => {
 const InputWrapper = styled.View`
   flex: ${props => calculateFlexValue(props)};
   justify-content: center;
-  height: ${props => calculateHeight(props)};
 `
 
 InputWrapper.defaultProps = {
@@ -78,7 +56,6 @@ const StyledInput = styled.TextInput`
   flex: ${props => props.inlineLabel ? .5 : 1};
   color: ${props => props.theme.Input.color};
   font-size: ${props => props.theme.BaseInput.fontSize};
-  height: ${props => calculateHeight(props)};
   line-height: ${props => props.theme.BaseInput.lineHeight};
   text-align-vertical: ${props => determineTextOrientation(props)};
 `
