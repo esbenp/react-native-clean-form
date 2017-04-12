@@ -9,7 +9,8 @@ const Switch = styled(BaseSwitch)`
 Switch.PropTypes = BaseSwitch.PropTypes
 
 Switch.defaultProps = Object.assign({}, BaseSwitch.defaultProps, {
-  theme: defaultTheme
+  theme: defaultTheme,
+  componentName: 'Switch',
 })
 
 export default Switch

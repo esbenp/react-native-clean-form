@@ -41,7 +41,8 @@ const ButtonText = styled.Text`
 `
 
 ButtonText.defaultProps = {
-  theme: defaultTheme
+  theme: defaultTheme,
+  componentName: 'Button'
 }
 
 const Button = props => {
