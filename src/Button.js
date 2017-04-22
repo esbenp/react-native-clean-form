@@ -61,7 +61,7 @@ const Button = props => {
   ]
 
   let IconWrapped = null
-  if (icon) {
+  if (icon || submitting) {
     const IconComponent = submitting
       ? <ActivityIndicator size="small" key="icon" color={theme.Button.color} />
       : <Icon key="icon" name={icon} size={14} color={theme.Button.color} />

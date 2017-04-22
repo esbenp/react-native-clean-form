@@ -1,6 +1,6 @@
 {
   "name": "react-native-clean-form",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "An example of creating mobile forms with React Native, styled-components and redux-form",
   "main": "index.js",
   "directories": {
