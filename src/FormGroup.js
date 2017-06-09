@@ -26,7 +26,7 @@ const calculateHeight = (props) => {
 }
 
 const FormGroupWrapper = styled.View`
-  align-items: ${props => props.inlineLabel ? 'center' : 'stretch' };
+  align-items: ${props => props.inlineLabel ? 'center' : 'stretch' }
   border-color: ${props => props.error ? props.theme.FormGroup.errorBorderColor : props.theme.FormGroup.borderColor};
   border-radius: ${props => props.theme.FormGroup.borderRadius};
   border-style: ${props => props.theme.FormGroup.borderStyle};
@@ -35,7 +35,10 @@ const FormGroupWrapper = styled.View`
   justify-content: flex-start;
   height: ${props => calculateHeight(props)};
   marginBottom: ${props => props.theme.FormGroup.marginBottom};
-  padding: ${props => props.theme.FormGroup.padding};
+  paddingTop : ${props => props.theme.FormGroup.paddingTop };
+  paddingRight : ${props => props.theme.FormGroup.paddingRight };
+  paddingBottom : ${props => props.theme.FormGroup.paddingBottom };
+  paddingLeft : ${props => props.theme.FormGroup.paddingLeft };
 `
 
 FormGroupWrapper.defaultProps = {
