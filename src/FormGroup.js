@@ -26,7 +26,7 @@ const calculateHeight = (props) => {
 }
 
 const FormGroupWrapper = styled.View`
-  align-items: ${props => props.inlineLabel ? 'center' : 'stretch' }
+  align-items: ${props => props.inlineLabel ? 'center' : 'stretch' };
   border-color: ${props => props.error ? props.theme.FormGroup.errorBorderColor : props.theme.FormGroup.borderColor};
   border-radius: ${props => props.theme.FormGroup.borderRadius};
   border-style: ${props => props.theme.FormGroup.borderStyle};
