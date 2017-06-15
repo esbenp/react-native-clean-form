@@ -35,7 +35,10 @@ const FormGroupWrapper = styled.View`
   justify-content: flex-start;
   height: ${props => calculateHeight(props)};
   marginBottom: ${props => props.theme.FormGroup.marginBottom};
-  padding: ${props => props.theme.FormGroup.padding};
+  paddingTop : ${props => props.theme.FormGroup.paddingTop };
+  paddingRight : ${props => props.theme.FormGroup.paddingRight };
+  paddingBottom : ${props => props.theme.FormGroup.paddingBottom };
+  paddingLeft : ${props => props.theme.FormGroup.paddingLeft };
 `
 
 FormGroupWrapper.defaultProps = {

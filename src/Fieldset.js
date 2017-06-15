@@ -19,7 +19,10 @@ const FieldsetLabel = props => <View><FieldsetLabelText>{ props.children }</Fiel
 const FieldsetWrapper = styled.View`
   borderBottomColor: ${props => props.theme.Fieldset.borderBottomColor };
   borderBottomWidth: ${props => props.last ? 0 : props.theme.Fieldset.borderBottomWidth };
-  padding: ${props => props.theme.Fieldset.padding };
+  paddingTop : ${props => props.theme.Fieldset.paddingTop };
+  paddingRight : ${props => props.theme.Fieldset.paddingRight };
+  paddingBottom : ${props => props.theme.Fieldset.paddingBottom };
+  paddingLeft : ${props => props.theme.Fieldset.paddingLeft };
 `
 
 FieldsetWrapper.defaultProps = {
