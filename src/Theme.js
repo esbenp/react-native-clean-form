@@ -19,7 +19,10 @@ const Theme = {
     labelSize: 9,
     labelWeight: 700,
     labelHeight: 25,
-    padding: '12 8'
+    paddingTop: 12,
+    paddingBottom: 12,
+    paddingLeft: 8,
+    paddingRight: 8,
   },
   FormGroup: {
     borderColor: '#ebebeb',
@@ -29,7 +32,10 @@ const Theme = {
     errorBorderColor: 'red',
     height: 35,
     marginBottom: 10,
-    padding: '0 10'
+    paddingTop: 0,
+    paddingBottom: 0,
+    paddingLeft: 10,
+    paddingRight: 10,
   },
   BaseInput: {
     placeholderColor: '#c9c9c9',
