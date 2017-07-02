@@ -7,7 +7,7 @@ import {
   View
 } from 'react-native'
 import styled from 'styled-components/native'
-import { default as BaseIcon } from 'react-native-vector-icons/Ionicons';
+import { Ionicons as BaseIcon } from '@expo/vector-icons'
 import defaultTheme from './Theme'
 
 // TODO: FIXME

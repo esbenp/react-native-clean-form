@@ -8,7 +8,7 @@ import {
   View
 } from 'react-native'
 import styled from 'styled-components/native'
-import Icon from 'react-native-vector-icons/Ionicons'
+import { Ionicons as Icon } from '@expo/vector-icons'
 import defaultTheme from './Theme'
 
 const ButtonWrapper = styled.View`
