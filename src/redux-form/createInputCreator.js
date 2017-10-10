@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { View } from 'react-native'
 import { FormGroup, Label } from '../../index'
 import styled from 'styled-components/native'
@@ -42,10 +43,10 @@ const createInputCreator = ReduxFormFieldComponent => (name, renderFunction, Pro
 
   FieldWrapper.displayName = 'FieldWrapper'
   FieldWrapper.PropTypes = Object.assign({
-    border: React.PropTypes.bool,
-    inlineLabel: React.PropTypes.bool,
-    label: React.PropTypes.string.isRequired,
-    name: React.PropTypes.string.isRequired
+    border: PropTypes.bool,
+    inlineLabel: PropTypes.bool,
+    label: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired
   }, PropTypes)
   FieldWrapper.defaultProps = Object.assign({
     border: FormGroup.defaultProps.border,

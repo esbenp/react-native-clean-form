@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { View, TextInput } from 'react-native'
 import styled from 'styled-components/native'
 import _ from 'lodash'
@@ -69,8 +70,8 @@ const FormGroup = props => {
 }
 
 FormGroup.PropTypes = {
-  border: React.PropTypes.bool,
-  error: React.PropTypes.bool,
+  border: PropTypes.bool,
+  error: PropTypes.bool,
 }
 
 FormGroup.defaultProps = {
