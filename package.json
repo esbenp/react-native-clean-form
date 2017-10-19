@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "styled-components": ">=1.4",
-    "react-native-vector-icons": ">=4.0.0"
+    "react-native-vector-icons": ">=4.0.0",
+    "prop-types": "^15.6.0"
   }
 }
