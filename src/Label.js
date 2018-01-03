@@ -1,5 +1,6 @@
 import React from 'react'
 import { Text, View, Platform } from 'react-native'
+import PropTypes from 'prop-types'
 import styled from 'styled-components/native'
 import defaultTheme from './Theme'
 
@@ -33,7 +34,7 @@ const Label = props => {
 }
 
 Label.PropTypes = {
-  children: React.PropTypes.string.isRequired
+  children: PropTypes.string.isRequired
 }
 
 export default Label

@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   View
 } from 'react-native'
+import PropTypes from 'prop-types'
 import styled from 'styled-components/native'
 import { default as BaseIcon } from 'react-native-vector-icons/Ionicons';
 import defaultTheme from './Theme'
@@ -142,14 +143,14 @@ class Select extends Component {
 }
 
 Select.PropTypes = {
-  labelKey: React.PropTypes.string,
-  placeholder: React.PropTypes.string,
-  onValueChange: React.PropTypes.func.isRequired,
-  options: React.PropTypes.array.isRequired,
-  valueKey: React.PropTypes.string,
-  value: React.PropTypes.oneOf([
-    React.PropTypes.string,
-    React.PropTypes.number
+  labelKey: PropTypes.string,
+  placeholder: PropTypes.string,
+  onValueChange: PropTypes.func.isRequired,
+  options: PropTypes.array.isRequired,
+  valueKey: PropTypes.string,
+  value: PropTypes.oneOf([
+    PropTypes.string,
+    PropTypes.number
   ])
 }
 
