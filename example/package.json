@@ -23,8 +23,8 @@
   },
   "dependencies": {
     "immutable": "^3.8.1",
-    "react": ">=15.4.0",
-    "react-native": "^0.42.3",
+    "react": "^16.0.0-alpha.6",
+    "react-native": "^0.43.3",
     "react-native-clean-form": "file:../",
     "react-native-vector-icons": ">=4.0.0",
     "react-redux": "^5.0.1",
