@@ -1,5 +1,9 @@
 # react-native-clean-form
 
+[![npm](https://img.shields.io/npm/dy/react-native-clean-form.svg)](https://www.npmjs.com/package/react-native-clean-form)
+[![Dependency Status](https://david-dm.org/esbenp/react-native-clean-form.svg)](https://david-dm.org/esbenp/react-native-clean-form)
+[![devDependency Status](https://david-dm.org/esbenp/react-native-clean-form/dev-status.svg)](https://david-dm.org/esbenp/react-native-clean-form#info=devDependencies&view=table)
+
 Easy react-native forms using bootstrap-like syntax with redux-form+immutablejs integration. Styled using styled-components
 
 ## Big kudos to Artyom Khamitov
