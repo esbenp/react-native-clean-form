@@ -48,7 +48,7 @@ const Fieldset = props => {
   )
 }
 
-Fieldset.PropTypes = {
+Fieldset.propTypes = {
   last: PropTypes.bool,
   label: PropTypes.string
 }
