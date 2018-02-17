@@ -15,6 +15,7 @@ import defaultTheme from './Theme'
 const HaveNoIdeaWhyThisIsNeeded=3
 
 const SelectLabel = styled.Text`
+  color: ${props => props.theme.Input.color};
   font-size: ${props => props.theme.BaseInput.fontSize};
   flex:1;
 `
@@ -108,7 +109,7 @@ class Select extends Component {
       return carry
     }, {})
 
-    let label = <SelectPlaceholder>{ placeholder }</SelectPlaceholder>
+    let label = <SelectPlaceholder theme={theme}>{placeholder}</SelectPlaceholder>
     if (value) {
       label = labelsByValue[value]
     }
@@ -132,8 +133,8 @@ class Select extends Component {
           </Picker>
         </Modal>
         <TouchableOpacity onPress={this.toggleSelector}>
-          <LabelIconWrapper inlineLabel={inlineLabel}>
-            <SelectLabel inlineLabel={inlineLabel}>{ label }</SelectLabel>
+          <LabelIconWrapper inlineLabel={inlineLabel} theme={theme}>
+            <SelectLabel inlineLabel={inlineLabel} theme={theme}>{ label }</SelectLabel>
             <Icon name="ios-arrow-down" />
           </LabelIconWrapper>
         </TouchableOpacity>
@@ -142,16 +143,16 @@ class Select extends Component {
   }
 }
 
-Select.PropTypes = {
+Select.propTypes = {
   labelKey: PropTypes.string,
   placeholder: PropTypes.string,
   onValueChange: PropTypes.func.isRequired,
   options: PropTypes.array.isRequired,
   valueKey: PropTypes.string,
-  value: PropTypes.oneOf([
-    PropTypes.string,
-    PropTypes.number
-  ])
+//   value: PropTypes.oneOf([ // Commented due to ugly errors with the recent React version
+//     PropTypes.string,
+//     PropTypes.number
+//   ])
 }
 
 Select.defaultProps = {
