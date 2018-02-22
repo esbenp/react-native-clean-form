@@ -10,30 +10,27 @@ import {
 } from '../../index'
 
 const createInputs = inputCreator => {
-  const renderInput = ({ input: { onChange, ...restInput }, placeholder}) => (
-    <InputRenderer onChangeText={onChange} placeholder={placeholder} {...restInput} />
+  const renderInput = ({ input: { onChange, ...restInput }, ...rest}) => (
+    <InputRenderer onChangeText={onChange} {...restInput} {...rest} />
   )
   const Input = inputCreator('Input', renderInput, InputRenderer.propTypes, InputRenderer.defaultProps)
 
-  const renderSelect = ({ input: { onChange, value }, labelKey, valueKey, options, placeholder }) => (
+  const renderSelect = ({ input: { onChange, value, ...restInput }, ...rest }) => (
     <SelectRenderer
-      labelKey={labelKey}
-      options={options}
       onValueChange={onChange}
-      placeholder={placeholder}
       value={value}
-      valueKey={valueKey}
+      {...restInput}
+      {...rest}
     />
   )
   const Select = inputCreator('Select', renderSelect, SelectRenderer.propTypes, SelectRenderer.defaultProps)
 
-  const renderSwitch = ({ input: { onChange, value }}) => {
+  const renderSwitch = ({ input: { onChange, value, ...restInput }, ...rest}) => {
     // redux-form default value is '', however Switch must take a boolean value
     if (value === '') {
       value = SwitchRenderer.defaultProps.value
     }
-
-    return <SwitchRenderer onValueChange={onChange} value={value} />
+    return <SwitchRenderer onValueChange={onChange} value={value} {...restInput} {...rest} />
   }
   const Switch = inputCreator('Switch', renderSwitch, SwitchRenderer.propTypes, SwitchRenderer.defaultProps)
 
