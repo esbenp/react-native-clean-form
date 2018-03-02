@@ -96,7 +96,7 @@ const Button = props => {
   )
 }
 
-Button.PropTypes = {
+Button.propTypes = {
   children: PropTypes.string.isRequired,
   icon: PropTypes.string,
   iconPlacement: PropTypes.oneOf(['left', 'right']),
