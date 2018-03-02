@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
 import {
-    Modal,
-    Platform,
-    Text,
-    TouchableOpacity,
-    View,
+  Modal,
+  Platform,
+  Text,
+  TouchableOpacity,
+  View,
 } from 'react-native'
 import Picker from 'react-native-universal-picker'
 import PropTypes from 'prop-types'
@@ -22,7 +22,7 @@ const SelectLabel = styled.Text`
 `
 
 SelectLabel.defaultProps = {
-    theme: defaultTheme
+  theme: defaultTheme
 }
 
 const LabelIconWrapper = styled.View`
@@ -30,25 +30,25 @@ const LabelIconWrapper = styled.View`
   align-items: center;
   flex-direction:row;
   height: ${props => props.inlineLabel
-        ? props.theme.FormGroup.height - props.theme.FormGroup.borderWidth * 2
-        : props.theme.FormGroup.height - HaveNoIdeaWhyThisIsNeeded
-    };
+    ? props.theme.FormGroup.height - props.theme.FormGroup.borderWidth * 2
+    : props.theme.FormGroup.height - HaveNoIdeaWhyThisIsNeeded
+  };
 `
 
 LabelIconWrapper.defaultProps = {
-    theme: defaultTheme
+  theme: defaultTheme
 }
 
 const SelectWrapper = styled.View`
   flex: ${props => props.inlineLabel ? .5 : 1};
   height: ${props => props.inlineLabel
-        ? props.theme.FormGroup.height - props.theme.FormGroup.borderWidth * 2
-        : props.theme.FormGroup.height - HaveNoIdeaWhyThisIsNeeded
-    };
+    ? props.theme.FormGroup.height - props.theme.FormGroup.borderWidth * 2
+    : props.theme.FormGroup.height - HaveNoIdeaWhyThisIsNeeded
+  };
 `
 
 SelectWrapper.defaultProps = {
-    theme: defaultTheme
+  theme: defaultTheme
 }
 
 const Icon = styled(BaseIcon) `
@@ -57,74 +57,73 @@ const Icon = styled(BaseIcon) `
 `
 
 class Select extends Component {
-    state = {
-        value: this.props.value
-    }
+  state = {
+    value: this.props.value
+  }
 
-    componentWillReceiveProps(nextProps) {
-        if(nextProps.value !== this.state.value) this.onValueChange(nextProps.value)
-    }
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.value !== this.state.value) this.onValueChange(nextProps.value)
+  }
 
-    onValueChange = (newValue) => {
-        this.props.onValueChange(newValue)
-        this.setState({value: newValue})
-    }
+  onValueChange = (newValue) => {
+    if(typeof this.props.onValueChange === 'function') this.props.onValueChange(newValue)
+    this.setState({value: newValue})
+  }
 
-    render() {
-        const {
-            inlineLabel,
-            labelKey,
-            options,
-            onValueChange,
-            placeholder,
-            valueKey,
-            theme,
-            ...rest
-        } = this.props
-        const {value} = this.state
+  render() {
+    const {
+      inlineLabel,
+      labelKey,
+      options,
+      onValueChange,
+      placeholder,
+      valueKey,
+      theme,
+      ...rest
+    } = this.props
+    const {value} = this.state
 
-        return <SelectWrapper inlineLabel={inlineLabel} theme={theme}>
-            <Picker
-                onValueChange={this.onValueChange}
-                selectedValue={value}
-                style={{
-                    color: value ? theme.Input.color : theme.BaseInput.placeholderColor,
-                    height: theme.FormGroup.height,
-                    // Ugly workaround, can't find the reason for the padding
-                    marginLeft: Platform.OS === 'ios' ? 0 : -7,
-                }}
-                itemStyle={{
-                    // color: value ? theme.Input.color : theme.BaseInput.placeholderColor,
-                    color: theme.Input.color,
-                    fontSize: theme.BaseInput.fontSize,
-                    paddingTop: 6,
-                }}
-                {...rest}>
-                {[{label: placeholder}, ...options].map(option => <Picker.Item
-                    key={value || 'undefined'}
-                    label={option[labelKey]}
-                    value={option[valueKey]} />
-                )}
-            </Picker>
-        </SelectWrapper>
-    }
+    return <SelectWrapper inlineLabel={inlineLabel} theme={theme}>
+      <Picker
+        onValueChange={this.onValueChange}
+        selectedValue={value}
+        style={{
+          color: value ? theme.Input.color : theme.BaseInput.placeholderColor,
+          height: theme.FormGroup.height,
+          // Ugly workaround, can't find the reason for the padding
+          marginLeft: Platform.OS === 'ios' ? 0 : -7,
+        }}
+        itemStyle={{
+          // color: value ? theme.Input.color : theme.BaseInput.placeholderColor,
+          color: theme.Input.color,
+          fontSize: theme.BaseInput.fontSize,
+          paddingTop: 6,
+        }}
+        {...rest}>
+        {[{label: placeholder}, ...options].map(option => <Picker.Item
+          key={value || 'undefined'}
+          label={option[labelKey]}
+          value={option[valueKey]} />
+        )}
+      </Picker>
+    </SelectWrapper>
+  }
 }
 
 Select.propTypes = {
-    labelKey: PropTypes.string,
-    placeholder: PropTypes.string,
-    onValueChange: PropTypes.func.isRequired,
-    options: PropTypes.array.isRequired,
-    valueKey: PropTypes.string
+  labelKey: PropTypes.string,
+  placeholder: PropTypes.string,
+  onValueChange: PropTypes.func,
+  options: PropTypes.array.isRequired,
+  valueKey: PropTypes.string
 }
 
 Select.defaultProps = {
-    componentName: 'Select',
-    onValueChange: () => {},
-    placeholder: '',
-    labelKey: 'label',
-    valueKey: 'value',
-    value: ''
+  componentName: 'Select',
+  placeholder: '',
+  labelKey: 'label',
+  valueKey: 'value',
+  value: ''
 }
 
 export default Select
